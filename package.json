@@ -10,13 +10,14 @@
     "deploy": "vercel --prod --yes"
   },
   "dependencies": {
+    "@portabletext/react": "^6.0.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-popover": "^1.0.7",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.22.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.0",
-    "next": "^14.0.0",
+    "next": "^15.1.0",
     "next-sanity": "^11.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,7 +32,7 @@
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.50.0",
-    "eslint-config-next": "^14.0.0",
+    "eslint-config-next": "^15.0.0",
     "postcss": "^8.4.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.2.0"
