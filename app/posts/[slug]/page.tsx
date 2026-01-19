@@ -6,9 +6,7 @@ import { PortableText } from '@portabletext/react'
 import Link from 'next/link'
 
 type Props = {
-  params: Promise<{
-    slug: string
-  }>
+  params: Promise<any>
 }
 
 export async function generateMetadata({ params }: Props) {

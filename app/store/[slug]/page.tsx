@@ -4,9 +4,7 @@ import OptimizedImage from '@/components/Image'
 import Link from 'next/link'
 
 type Props = {
-  params: Promise<{
-    slug: string
-  }>
+  params: Promise<any>
 }
 
 export async function generateMetadata({ params }: Props) {
