@@ -4,13 +4,14 @@ import OptimizedImage from '@/components/Image'
 import Link from 'next/link'
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: Props) {
-  const product = getProductBySlug(params.slug)
+  const { slug } = await params
+  const product = getProductBySlug(slug)
   
   if (!product) {
     return {
@@ -24,8 +25,9 @@ export async function generateMetadata({ params }: Props) {
   }
 }
 
-export default function ProductPage({ params }: Props) {
-  const product = getProductBySlug(params.slug)
+export default async function ProductPage({ params }: Props) {
+  const { slug } = await params
+  const product = getProductBySlug(slug)
 
   if (!product) {
     notFound()

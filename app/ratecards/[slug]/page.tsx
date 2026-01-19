@@ -3,13 +3,14 @@ import { getRateCard } from '@/lib/data/ratecards'
 import Link from 'next/link'
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: Props) {
-  const rateCard = getRateCard(params.slug)
+  const { slug } = await params
+  const rateCard = getRateCard(slug)
   
   if (!rateCard) {
     return {
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: Props) {
   }
 }
 
-export default function RateCardSlugPage({ params }: Props) {
-  const rateCard = getRateCard(params.slug)
+export default async function RateCardSlugPage({ params }: Props) {
+  const { slug } = await params
+  const rateCard = getRateCard(slug)
 
   if (!rateCard) {
     notFound()

@@ -4,13 +4,14 @@ import OptimizedImage from '@/components/Image'
 import Link from 'next/link'
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: Props) {
-  const category = getGalleryCategory(params.slug)
+  const { slug } = await params
+  const category = getGalleryCategory(slug)
   
   if (!category) {
     return {
@@ -24,8 +25,9 @@ export async function generateMetadata({ params }: Props) {
   }
 }
 
-export default function GallerySlugPage({ params }: Props) {
-  const category = getGalleryCategory(params.slug)
+export default async function GallerySlugPage({ params }: Props) {
+  const { slug } = await params
+  const category = getGalleryCategory(slug)
 
   if (!category) {
     notFound()
