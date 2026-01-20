@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="__className_f367f3">
-      <body className="">
+      <body className="" suppressHydrationWarning>
         <Nav />
         <main className="pt-20">{children}</main>
         <Footer />
