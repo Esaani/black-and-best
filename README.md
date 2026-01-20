@@ -27,6 +27,19 @@ npm install
 yarn install
 ```
 
+2. Configure environment variables:
+```bash
+# Copy the example file and update with your Sanity credentials
+cp env.example .env.local
+```
+
+Then edit `.env.local` and add your Sanity project details:
+```
+NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+```
+
 ### Development
 
 Run the development server:
