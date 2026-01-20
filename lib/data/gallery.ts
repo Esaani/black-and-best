@@ -18,21 +18,28 @@ export const galleryCategories: Record<string, GalleryCategory> = {
     name: 'Wedding',
     description: 'Beautiful wedding photography',
     images: [
-      // Add your image paths here
-      // Example: { id: '1', src: '/images/gallery/wedding/wedding-1.jpg', alt: 'Wedding photo 1' }
+      { id: '1', src: '/images/gallery/wedding/wedding-1.jpg', alt: 'Wedding photo 1' },
+      { id: '2', src: '/images/gallery/wedding/wedding-2.jpg', alt: 'Wedding photo 2' },
+      { id: '3', src: '/images/gallery/wedding/wedding-3.jpg', alt: 'Wedding photo 3' },
     ],
   },
   studioshoots: {
     slug: 'studioshoots',
     name: 'Studio Shoots',
     description: 'Professional studio photography',
-    images: [],
+    images: [
+      { id: '1', src: '/images/gallery/studioshoots/studio-1.jpg', alt: 'Studio shoot 1' },
+      { id: '2', src: '/images/gallery/studioshoots/studio-2.jpg', alt: 'Studio shoot 2' },
+    ],
   },
   beautyshoots: {
     slug: 'beautyshoots',
     name: 'Beauty Shoots',
     description: 'Beauty and portrait photography',
-    images: [],
+    images: [
+      { id: '1', src: '/images/gallery/beautyshoots/beauty-1.jpg', alt: 'Beauty shoot 1' },
+      { id: '2', src: '/images/gallery/beautyshoots/beauty-2.jpg', alt: 'Beauty shoot 2' },
+    ],
   },
   hairshoots: {
     slug: 'hairshoots',
@@ -80,7 +87,10 @@ export const galleryCategories: Record<string, GalleryCategory> = {
     slug: 'location-shoot',
     name: 'Location Shoot',
     description: 'On-location photography',
-    images: [],
+    images: [
+      { id: '1', src: '/images/gallery/location-shoot/location-1.jpg', alt: 'Location shoot 1' },
+      { id: '2', src: '/images/gallery/location-shoot/location-2.jpg', alt: 'Location shoot 2' },
+    ],
   },
 }
 
