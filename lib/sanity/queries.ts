@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity'
-import { client } from '@/sanity/lib/client'
+import { client } from '@/lib/sanity/client'
 
 // Re-export queries from sanity/lib/queries
 export * from '@/sanity/lib/queries'
@@ -44,3 +44,126 @@ export async function getPostsOrdered() {
   )
 }
 
+// Gallery queries
+export async function getAllGalleries() {
+  return await client.fetch(
+    groq`*[_type == "gallery"]{
+      _id,
+      title,
+      slug,
+      category,
+      description,
+      images,
+      featured,
+      publishedAt
+    }`
+  )
+}
+
+export async function getGalleryBySlug(slug: string) {
+  return await client.fetch(
+    groq`*[_type == "gallery" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      category,
+      description,
+      images[]{
+        image,
+        alt,
+        title
+      },
+      featured,
+      publishedAt
+    }`,
+    { slug }
+  )
+}
+
+export async function getGalleriesByCategory(category: string) {
+  return await client.fetch(
+    groq`*[_type == "gallery" && category == $category]{
+      _id,
+      title,
+      slug,
+      category,
+      description,
+      images[]{
+        image,
+        alt,
+        title
+      },
+      featured,
+      publishedAt
+    }`,
+    { category }
+  )
+}
+
+// Product queries
+export async function getAllProducts() {
+  return await client.fetch(
+    groq`*[_type == "product"]{
+      _id,
+      name,
+      slug,
+      description,
+      price,
+      currency,
+      image,
+      category,
+      variants,
+      featured,
+      publishedAt
+    }`
+  )
+}
+
+export async function getProductBySlug(slug: string) {
+  return await client.fetch(
+    groq`*[_type == "product" && slug.current == $slug][0]{
+      _id,
+      name,
+      slug,
+      description,
+      price,
+      currency,
+      image,
+      category,
+      variants,
+      featured,
+      publishedAt
+    }`,
+    { slug }
+  )
+}
+
+// Rate Card queries
+export async function getAllRateCards() {
+  return await client.fetch(
+    groq`*[_type == "rateCard"]{
+      _id,
+      title,
+      slug,
+      description,
+      currency,
+      packages,
+      publishedAt
+    }`
+  )
+}
+
+export async function getRateCardBySlug(slug: string) {
+  return await client.fetch(
+    groq`*[_type == "rateCard" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      description,
+      currency,
+      packages,
+      publishedAt
+    }`,
+    { slug }
+  )
+}
