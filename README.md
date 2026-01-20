@@ -95,6 +95,15 @@ yarn start
 - Booking system
 - Responsive design
 - SEO optimized
+- Sanity CMS integration for dynamic content
+
+## Updating Content
+
+See **UPDATE_CONTENT.md** for detailed instructions on how to:
+- Update images (products, gallery)
+- Update information (products, pricing, gallery)
+- Use Sanity CMS for posts
+- Update contact information
 
 ## Notes
 
